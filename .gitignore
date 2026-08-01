@@ -1,0 +1,25 @@
+# secrets — never commit
+*.env
+.env.*
+!.env.example
+*.key
+*.pem
+kubeconfig
+*.kubeconfig
+**/.kube/
+
+# python (if you run the demo app locally)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# os / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# logs / temp
+*.log
+tmp/
