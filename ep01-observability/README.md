@@ -4,7 +4,7 @@ Build a complete observability stack on a local Kubernetes cluster — **Prometh
 (metrics), **Loki** (logs), and **Tempo** (traces), all wired into one **Grafana** —
 then use it to debug a real microservice bug.
 
-📺 Watch the episode: `<VIDEO LINK>`
+📺 Watch the episode: `https://www.youtube.com/watch?v=VvgfFBpOj68`
 
 The demo app is a tiny storefront: `frontend → checkout → payment`. The **payment**
 service fails with a `503` about a third of the time — that's the bug we hunt down.
