@@ -2,7 +2,7 @@
 
 Learn how to configure Horizontal Pod Autoscaler (HPA) to scale your workloads automatically under load surges.
 
-📺 Watch the full episode: `<VIDEO LINK>`
+📺 Watch the full episode: https://youtu.be/6z7CbYLzOn4
 
 ## Quickstart
 
