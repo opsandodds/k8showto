@@ -1,0 +1,22 @@
+# ArgoCD Application -- storefront demo
+# Points at THIS repo, auto-syncs from Git.
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: storefront
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ops-and-odds/k8s-how-to.git
+    targetRevision: main
+    path: ep03-gitops/app
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: shop
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
