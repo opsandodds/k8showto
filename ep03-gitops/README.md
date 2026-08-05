@@ -2,7 +2,7 @@
 
 Deploy and manage Kubernetes workloads declaratively using ArgoCD and Git as the single source of truth.
 
-:tv: Watch the full episode: `<VIDEO LINK>`
+:tv: Watch the full episode: https://www.youtube.com/watch?v=S6KqZcNNIpY
 
 ## Prerequisites
 
