@@ -11,6 +11,7 @@ is a real, do-it-yourself tutorial you can run on your own laptop with
 | 1 | Observability: logs, metrics & traces with the Grafana stack | [`ep01-observability/`](ep01-observability/) |
 | 2 | Autoscaling with the Horizontal Pod Autoscaler | [`ep02-autoscaling/`](ep02-autoscaling/) |
 | 3 | GitOps with ArgoCD | [`ep03-gitops/`](ep03-gitops/) |
+| 4 | Ingress Controllers & Automated TLS Certificates | [`ep04-ingress/`](ep04-ingress/) |
 
 Each folder has its own README with the exact commands from the video.
 
