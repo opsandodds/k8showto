@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: storefront-web
+  namespace: shop
+  labels:
+    app: storefront-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: storefront-web
+  template:
+    metadata:
+      labels:
+        app: storefront-web
+    spec:
+      # Pod-level SecurityContext
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        fsGroup: 10001
+      containers:
+      - name: web
+        image: nginx:alpine
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - secretRef:
+            name: db-credentials
+        # Container-level SecurityContext
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop:
+            - ALL
+        volumeMounts:
+        - name: tmp-volume
+          mountPath: /tmp
+        - name: cache-volume
+          mountPath: /var/cache/nginx
+      volumes:
+      - name: tmp-volume
+        emptyDir: {}
+      - name: cache-volume
+        emptyDir: {}
