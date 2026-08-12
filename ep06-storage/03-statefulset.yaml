@@ -1,0 +1,33 @@
+# StatefulSet with dedicated per-pod PVCs via volumeClaimTemplates
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: web-db
+  namespace: shop
+spec:
+  serviceName: db-service
+  replicas: 2
+  selector:
+    matchLabels:
+      app: storefront-db
+  template:
+    metadata:
+      labels:
+        app: storefront-db
+    spec:
+      containers:
+      - name: mysql
+        image: alpine:latest
+        command: ["sh", "-c", "echo 'Stateful Pod Initialized' > /data/status.txt && tail -f /dev/null"]
+        volumeMounts:
+        - name: data-volume
+          mountPath: /data
+  volumeClaimTemplates:
+  - metadata:
+      name: data-volume
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "retain-local-path"
+      resources:
+        requests:
+          storage: 1Gi

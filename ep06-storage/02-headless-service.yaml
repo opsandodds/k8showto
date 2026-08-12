@@ -1,0 +1,15 @@
+# Headless Service (clusterIP: None) providing stable DNS endpoints for StatefulSet pods
+apiVersion: v1
+kind: Service
+metadata:
+  name: db-service
+  namespace: shop
+  labels:
+    app: storefront-db
+spec:
+  clusterIP: None
+  selector:
+    app: storefront-db
+  ports:
+  - port: 3306
+    name: mysql

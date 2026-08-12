@@ -1,0 +1,8 @@
+# Custom StorageClass with Retain policy (prevents accidental PV deletion on PVC removal)
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: retain-local-path
+provisioner: rancher.io/local-path
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer
