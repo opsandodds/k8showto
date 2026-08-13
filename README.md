@@ -14,6 +14,7 @@ is a real, do-it-yourself tutorial you can run on your own laptop with
 | 4 | Ingress Controllers & Automated TLS Certificates | [`ep04-ingress/`](ep04-ingress/) |
 | 5 | Secrets Management & Security Hardening (SealedSecrets & Pod SecurityContext) | [`ep05-secrets-security/`](ep05-secrets-security/) |
 | 6 | StatefulSets & Storage Classes on Kubernetes | [`ep06-storage/`](ep06-storage/) |
+| 7 | Custom Resource Definitions (CRDs) & Kubernetes Operators (Series Finale) | [`ep07-operators/`](ep07-operators/) |
 
 Each folder has its own README with the exact commands from the video.
 

@@ -1,0 +1,10 @@
+# Custom Resource instance of DatabaseCluster
+apiVersion: opsandodds.io/v1alpha1
+kind: DatabaseCluster
+metadata:
+  name: storefront-db
+  namespace: shop
+spec:
+  replicas: 3
+  engine: postgres
+  storageSize: 10Gi
